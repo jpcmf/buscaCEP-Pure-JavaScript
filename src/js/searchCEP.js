@@ -34,7 +34,7 @@
     }
 
     function getUrl() {
-      return 'http://apps.widenet.com.br/busca-cep/api/cep.json?' + 'code=' + $inputCEP.get()[0].value;
+      return 'https://apps.widenet.com.br/busca-cep/api/cep.json?' + 'code=' + $inputCEP.get()[0].value;
     }
 
     function handleReadyStateChange() {
