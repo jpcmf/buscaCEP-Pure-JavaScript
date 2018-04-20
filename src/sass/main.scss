@@ -1,0 +1,109 @@
+//
+// import stylesheets
+// --------------------
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
+// @import "../../node_modules/bootstrap/dist/css/bootstrap.css";
+// @import "../../node_modules/bootstrap/dist/css/bootstrap-theme.css";
+
+//
+// geral
+// --------------------
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-bg-color: #F6F6F6;
+  --main-border-color: #cccccc;
+  --button-bg-color: #28D060;
+  --button-text-color: #EEE;
+  --input-bg-color: #eee;
+  --input-text-color: #333;
+  --button-disabled-bg-color: #cccccc;
+  --status-error-text-color: #FF9494;
+}
+
+body {
+  background: var(--main-bg-color);
+  font-family: 'Roboto', sans-serif;
+  padding-bottom: 30px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.formCEP {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+
+  input {
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid var(--main-border-color);
+    font-size: 18px;
+    font-weight: 400;
+    padding: 20px 0;
+    outline: 0;
+  }
+
+  button {
+    background-color: var(--button-bg-color);
+    border: 0;
+    color: var(--button-text-color);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 20px;
+  }
+
+  button[data-js="btnClear"] {
+    background-color: var(--button-clear-bg-color);
+    grid-column: span 1;
+  }
+
+  button:disabled {
+    background-color: var(--button-disabled-bg-color);
+  }
+}
+
+.status {
+  padding: 20px 0;
+  text-align: center;
+
+  h3.error {
+    color: var(--status-error-text-color);
+  }
+}
+
+.results {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+
+  &.hidden {
+    display: none;
+  }
+
+  p {
+    border-bottom: 1px solid var(--main-border-color);
+    // color:
+    margin: 5px;
+    padding-bottom: 5px;
+  }
+
+  span {
+    // display: block;
+    // font-size: 32px;
+    // margin: 30px 20px 0;
+    // text-align: center;
+    // word-wrap: break-word;
+  }
+
+}
