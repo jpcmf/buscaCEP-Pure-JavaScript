@@ -98,10 +98,14 @@
 
     return {
       init: function() {
+        this.initEvents();
+      },
+
+      initEvents: function initEvents() {
         $infos.get()[0].classList.add('hidden');
         $inputCEP.forEach(function(item) {
-          item.addEventListener('input', function() {
-            item.value.length == 0 ? $consultaCEP.get()[0].disabled = true : $consultaCEP.get()[0].disabled = false;
+          item.addEventListener('input', function(e) {
+            item = e.target.value.length == 0 ? $consultaCEP.get()[0].disabled = true : $consultaCEP.get()[0].disabled = false;
           });
         });
       }
