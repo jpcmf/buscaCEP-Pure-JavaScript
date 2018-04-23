@@ -15,15 +15,6 @@
     var ajax = new XMLHttpRequest();
     $formCEP.on('submit', handleSubmitFormCEP);
 
-    // function init() {
-      // $infos.get()[0].classList.add('hidden');
-      $inputCEP.forEach(function(item) {
-        item.addEventListener('input', function() {
-          item.value.length == 0 ? $consultaCEP.get()[0].disabled = true : $consultaCEP.get()[0].disabled = false;
-        });
-      });
-    // }
-
     function handleSubmitFormCEP(e) {
       e.preventDefault();
       var url = getUrl();
@@ -104,10 +95,20 @@
       var cep = $inputCEP.get()[0].value;
       return message.replace('[CEP]', cep);
     }
+
+    return {
+      init: function() {
+        $infos.get()[0].classList.add('hidden');
+        $inputCEP.forEach(function(item) {
+          item.addEventListener('input', function() {
+            item.value.length == 0 ? $consultaCEP.get()[0].disabled = true : $consultaCEP.get()[0].disabled = false;
+          });
+        });
+      }
+    }
   }
 
   window.app = app;
-  app();
-  // init();
+  app().init();
 
 })(window.DOM);
